@@ -41,7 +41,7 @@ def operators_schedule():
         for d in all_days:
             model.AddExactlyOne(states[(o, d, s)] for s in all_operator_states)
 
-    # Условие последовательности отдыха после вахты
+    # Условие последовательности отдыха после вахты (условие составлено нечитаемо для библиотеки)
     for o in all_operators:
         for s in all_machines:
             for d in all_days:
@@ -66,7 +66,7 @@ def operators_schedule():
                               sum([states[(o, i, 0)] for i in range(job_end+1,job_end+relax_duration+1)]) == relax_duration and
                               not states[(o,job_end+1+relax_duration,0)])
 
-    # Условие недельных интервалов отпуска
+    # Условие недельных интервалов отпуска (условие составлено нечитаемо для библиотеки)
     for o in all_operators:
             for d in all_days:
                 s = 10
